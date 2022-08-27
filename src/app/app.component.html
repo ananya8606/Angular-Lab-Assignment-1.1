@@ -1,0 +1,10 @@
+<button (click)="selectedValue = !selectedValue">{{selectedValue? 'Click here for SmartPhonedetails' : 'Click here for BasicPhonedetails'}}</button> 
+<div *ngIf="selectedValue; else elseBlock"><p>Below are Basic Phone Details:</p><div *ngFor="let m of BasicPhonedetails">
+  <span>{{m.printMobileDetail()}}</span>
+</div></div>  
+    <ng-template #elseBlock><p>Below are Smart Phone Details:</p><div *ngFor="let s of SmartPhonedetails">
+      <span>{{s.printMobileDetail()}}</span>
+    </div>
+    </ng-template>  
+
+  
